@@ -4,7 +4,7 @@ import EducationSection from "./Components/EducationSection.jsx";
 import ExperienceSection from "./Components/ExperienceSection.jsx";
 import ActionButtons from "./Components/ActionButtons.jsx";
 import "./style.css";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 function App() {
   const firstNameRef = useRef();
@@ -15,19 +15,28 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setFormData({
-      firstName: firstNameRef.current.value,
-      lastName: lastNameRef.current.value,
-      address: addressRef.current.value,
-      phoneNumber: phoneNumberRef.current.value,
-    });
-    console.log(formData);
+
+    const data = {
+      firstName: firstNameRef.current?.value || "",
+      lastName: lastNameRef.current?.value || "",
+      address: addressRef.current?.value || "",
+      phoneNumber: phoneNumberRef.current?.value || "",
+    };
+
+    setFormData(data);
   }
+
+  useEffect(() => {
+    console.log(formData);
+  }, [formData]);
 
   return (
     <CvForm onSubmit={handleSubmit}>
       <GeneralSection
-        formRefs={{ firstNameRef, lastNameRef, addressRef, phoneNumberRef }}
+        firstNameRef={firstNameRef}
+        lastNameRef={lastNameRef}
+        addressRef={addressRef}
+        phoneNumberRef={phoneNumberRef}
       />
       <EducationSection />
       <ExperienceSection />
