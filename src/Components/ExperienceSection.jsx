@@ -38,6 +38,7 @@ export default function ExperienceSection() {
         cols="30"
         rows="10"
         ref={descriptionRef}
+        className="description"
       ></textarea>
       <label htmlFor="startOfJob" className="label">
         Start of Job
