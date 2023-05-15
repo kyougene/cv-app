@@ -1,11 +1,5 @@
-import { useRef } from "react";
-
-export default function GeneralSection() {
-  const firstNameRef = useRef();
-  const lastNameRef = useRef();
-  const addressRef = useRef();
-  const phoneNumberRef = useRef();
-  console.log("gen render");
+export default function GeneralSection(props) {
+  console.log(props);
   return (
     <div className="general-section section">
       <label htmlFor="first-name" className="label">
@@ -16,16 +10,26 @@ export default function GeneralSection() {
         id="first-name"
         name="first-name"
         className="input"
-        ref={firstNameRef}
+        ref={props.firstNameRef}
       />
       <label htmlFor="last-name" className="label">
         Last Name
       </label>
-      <input type="text" ref={lastNameRef} className="input" id="last-name" />
+      <input
+        type="text"
+        className="input"
+        id="last-name"
+        ref={props.lastNameRef}
+      />
       <label htmlFor="address" className="label">
         Address
       </label>
-      <input type="text" ref={addressRef} id="address" className="input" />
+      <input
+        type="text"
+        id="address"
+        className="input"
+        ref={props.addressRef}
+      />
       <label htmlFor="phoneNumber" className="label">
         Phone Number
       </label>
@@ -33,7 +37,7 @@ export default function GeneralSection() {
         type="text"
         className="input"
         id="phoneNumber"
-        ref={phoneNumberRef}
+        ref={props.phoneNumberRef}
       />
     </div>
   );

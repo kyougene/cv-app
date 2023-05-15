@@ -1,9 +1,6 @@
-export default function CvForm({ children }) {
-  function handleClick(e) {
-    e.preventDefault();
-  }
+export default function CvForm({ children, onSubmit }) {
   return (
-    <form action="" onSubmit={handleClick} className="form">
+    <form action="" className="form" onSubmit={onSubmit}>
       {children}
     </form>
   );
