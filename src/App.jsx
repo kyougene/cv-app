@@ -11,6 +11,15 @@ function App() {
   const lastNameRef = useRef();
   const addressRef = useRef();
   const phoneNumberRef = useRef();
+  const schoolNameRef = useRef();
+  const schoolMajorRef = useRef();
+  const startOfStudyRef = useRef();
+  const endOfStudyRef = useRef();
+  const jobTitleRef = useRef();
+  const companyNameRef = useRef();
+  const descriptionRef = useRef();
+  const startOfJobRef = useRef();
+  const endOfJobRef = useRef();
   const [formData, setFormData] = useState({});
 
   function handleSubmit(e) {
@@ -21,6 +30,15 @@ function App() {
       lastName: lastNameRef.current?.value || "",
       address: addressRef.current?.value || "",
       phoneNumber: phoneNumberRef.current?.value || "",
+      schoolName: schoolNameRef.current?.value || "",
+      schoolMajor: schoolMajorRef.current?.value || "",
+      studyStartDate: startOfStudyRef.current?.value || null,
+      studyEndDate: endOfStudyRef.current?.value || null,
+      jobTitle: jobTitleRef.current?.value || "",
+      companyName: companyNameRef.current?.value || "",
+      description: descriptionRef.current?.value || "",
+      jobStart: startOfJobRef.current?.value || null,
+      jobEnd: endOfJobRef.current?.value || null,
     };
 
     setFormData(data);
@@ -38,8 +56,19 @@ function App() {
         addressRef={addressRef}
         phoneNumberRef={phoneNumberRef}
       />
-      <EducationSection />
-      <ExperienceSection />
+      <EducationSection
+        schoolNameRef={schoolNameRef}
+        schoolMajorRef={schoolMajorRef}
+        startOfStudyRef={startOfStudyRef}
+        endOfStudyRef={endOfStudyRef}
+      />
+      <ExperienceSection
+        jobTitleRef={jobTitleRef}
+        companyNameRef={companyNameRef}
+        descriptionRef={descriptionRef}
+        startOfJobRef={startOfJobRef}
+        endOfJobRef={endOfJobRef}
+      />
       <ActionButtons />
     </CvForm>
   );

@@ -1,12 +1,4 @@
-import { useRef } from "react";
-
-export default function ExperienceSection() {
-  const jobTitleRef = useRef();
-  const companyNameRef = useRef();
-  const descriptionRef = useRef();
-  const startOfJobRef = useRef();
-  const endOfJobRef = useRef();
-
+export default function ExperienceSection(props) {
   return (
     <div className="experience-section section">
       <label htmlFor="job-title" className="label">
@@ -17,7 +9,7 @@ export default function ExperienceSection() {
         id="job-title"
         name="job-title"
         className="input"
-        ref={jobTitleRef}
+        ref={props.jobTitleRef}
       />
       <label htmlFor="company-name" className="label">
         Company
@@ -27,7 +19,7 @@ export default function ExperienceSection() {
         id="company-name"
         name="companyName"
         className="input"
-        ref={companyNameRef}
+        ref={props.companyNameRef}
       />
       <label htmlFor="description" className="label">
         Description
@@ -37,7 +29,7 @@ export default function ExperienceSection() {
         id="description"
         cols="30"
         rows="10"
-        ref={descriptionRef}
+        ref={props.descriptionRef}
         className="description"
       ></textarea>
       <label htmlFor="startOfJob" className="label">
@@ -48,7 +40,7 @@ export default function ExperienceSection() {
         id="startOfJob"
         className="input"
         name="startOfJob"
-        ref={startOfJobRef}
+        ref={props.startOfJobRef}
       />
       <label htmlFor="endOfJob" className="label">
         End of Job
@@ -58,7 +50,7 @@ export default function ExperienceSection() {
         name="endOfJob"
         id="endOfJob"
         className="input"
-        ref={endOfJobRef}
+        ref={props.endOfJobRef}
       />
     </div>
   );

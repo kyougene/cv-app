@@ -1,5 +1,4 @@
 export default function GeneralSection(props) {
-  console.log(props);
   return (
     <div className="general-section section">
       <label htmlFor="first-name" className="label">

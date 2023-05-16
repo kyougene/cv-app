@@ -1,12 +1,4 @@
-import { useRef } from "react";
-
-export default function EducationSection() {
-  const schoolNameRef = useRef();
-  const schoolMajorRef = useRef();
-  const startOfStudyRef = useRef();
-  const endOfStudyRef = useRef();
-  console.log("Ed Render");
-
+export default function EducationSection(props) {
   return (
     <div className="education-section section">
       <label htmlFor="schoolName" className="label">
@@ -17,7 +9,7 @@ export default function EducationSection() {
         id="schoolName"
         className="input"
         name="schoolName"
-        ref={schoolNameRef}
+        ref={props.schoolNameRef}
       />
       <label htmlFor="schoolMajor" className="label">
         School Major
@@ -27,7 +19,7 @@ export default function EducationSection() {
         id="schoolMajor"
         className="input"
         name="schoolMajor"
-        ref={schoolMajorRef}
+        ref={props.schoolMajorRef}
       />
       <label htmlFor="startOfStudy" className="label">
         Start of Study
@@ -37,7 +29,7 @@ export default function EducationSection() {
         id="startOfStudy"
         className="input"
         name="startOfStudy"
-        ref={startOfStudyRef}
+        ref={props.startOfStudyRef}
       />
       <label htmlFor="endOfStudy" className="label">
         End of Study
@@ -47,7 +39,7 @@ export default function EducationSection() {
         name="endOfStudy"
         id="endOfStudy"
         className="input"
-        ref={endOfStudyRef}
+        ref={props.endOfStudyRef}
       />
     </div>
   );
